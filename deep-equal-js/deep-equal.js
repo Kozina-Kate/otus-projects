@@ -1,4 +1,5 @@
 // deepEqual: стратегия на класс, расширение без правки движка.
+// Запуск тестов: node --test deep-equal-js/deep-equal.test.js
 
 class Comparator {
   canHandle(_value) {
