@@ -191,18 +191,22 @@ function describe(value) {
   return value.constructor?.name ?? typeof value;
 }
 
+function deepEqual(a, b, options = {}) {
+  return new DeepEqualEngine(options).deepEqual(a, b);
+}
+
 const engine = new DeepEqualEngine();
 
 assert.equal(
-  engine.deepEqual(
+  deepEqual(
     { a: 1, b: [2, 3], c: { d: 4 } },
     { c: { d: 4 }, b: [2, 3], a: 1 }
   ),
   true
 );
-assert.equal(engine.deepEqual({ a: 1 }, { a: 1, b: undefined }), false);
-assert.equal(engine.deepEqual(NaN, NaN), true);
-assert.equal(engine.deepEqual(null, {}), false);
+assert.equal(deepEqual({ a: 1 }, { a: 1, b: undefined }), false);
+assert.equal(deepEqual(NaN, NaN), true);
+assert.equal(deepEqual(null, {}), false);
 assert.equal(
   engine.deepEqual(new Date("2024-01-02"), new Date("2024-01-02")),
   true
