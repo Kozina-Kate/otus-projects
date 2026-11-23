@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Build lab — небольшая лаборатория современной сборки. HTML, CSS и JavaScript, собранные с Vite."
+    />
+    <meta name="theme-color" content="#f6f7f9" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Build lab — от исходников к результату</title>
+    <script type="module" src="/main.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#main" aria-label="Build lab — к содержимому">
+          <img src="/favicon.svg" alt="" width="35" height="35" />
+          build<span>lab.</span>
+        </a>
+        <span class="header-caption">МАЛЕНЬКАЯ ЛАБОРАТОРИЯ БОЛЬШИХ ИДЕЙ</span>
+        <a class="header-link" href="#playground"
+          >Попробовать <span aria-hidden="true">↗</span></a
+        >
+      </header>
+
+      <main id="main">
+        <section class="intro" aria-labelledby="intro-heading">
+          <div class="intro-copy">
+            <div class="eyebrow"><span></span> СОБРАНО С VITE</div>
+            <h1 id="intro-heading">Из исходников —<br />в готовый <em>проект.</em></h1>
+            <p class="intro-description">
+              Разметка, стили и немного логики.<br />Всё на своих местах. Всё работает
+              вместе.
+            </p>
+            <a href="#playground" class="primary-button"
+              >Проверим в деле <span aria-hidden="true">↓</span></a
+            >
+            <div class="intro-note">
+              <span aria-hidden="true">✓</span> Без фреймворков. Только нужное.
+            </div>
+          </div>
+
+          <div class="build-visual" aria-label="HTML, CSS и JavaScript собираются в dist">
+            <div class="visual-top">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span
+              ><span>project /</span><span class="live-dot" aria-hidden="true"></span>
+            </div>
+            <div class="file-stack">
+              <div class="source-file">
+                <span class="file-icon html-icon">&lt;/&gt;</span>
+                <div><strong>index.html</strong><small>Структура и смысл</small></div>
+                <span class="file-type">HTML</span>
+              </div>
+              <div class="source-file">
+                <span class="file-icon css-icon">#</span>
+                <div><strong>styles.css</strong><small>Форма и настроение</small></div>
+                <span class="file-type">CSS</span>
+              </div>
+              <div class="source-file">
+                <span class="file-icon js-icon">{ }</span>
+                <div><strong>main.js</strong><small>Действия и отклик</small></div>
+                <span class="file-type">JS</span>
+              </div>
+            </div>
+            <div class="build-connector">
+              <span></span><span class="build-command">npm run build</span><span></span>
+            </div>
+            <div class="build-result">
+              <span class="result-check" aria-hidden="true">✓</span>
+              <div><strong>dist/</strong><small>Готово к следующему шагу</small></div>
+              <span class="result-badge">BUILD</span>
+            </div>
+            <div class="visual-bottom">
+              <span>3 исходника</span><span aria-hidden="true">→</span
+              ><span>1 готовый проект</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-divider">
+          <span>МЕНЬШЕ НАСТРОЕК ВРУЧНУЮ. БОЛЬШЕ ВРЕМЕНИ НА ИДЕИ.</span
+          ><span aria-hidden="true">✳</span>
+        </div>
+
+        <section class="playground" id="playground" aria-labelledby="playground-heading">
+          <div class="playground-copy">
+            <span class="eyebrow">01 / ИНТЕРАКТИВНОСТЬ</span>
+            <h2 id="playground-heading">Маленький клик.<br />Настоящий результат.</h2>
+            <p>
+              Нажмите на плюс. Если число изменилось,<br />JavaScript подключён и
+              работает.<br />А всё, что вокруг, — это HTML и CSS.
+            </p>
+            <div class="script-status" id="script-status">
+              <span></span><span id="script-status-text">Ожидание JavaScript</span>
+            </div>
+          </div>
+
+          <div class="counter-card">
+            <div class="counter-top">
+              <span>ПРОВЕРКА СВЯЗИ</span
+              ><span class="counter-symbol" aria-hidden="true">↗</span>
+            </div>
+            <p class="counter-caption">Сколько шагов до вашей идеи?</p>
+            <div class="counter-controls">
+              <button
+                type="button"
+                id="decrement"
+                class="counter-button"
+                aria-label="Уменьшить на один"
+                disabled
+              >
+                −</button
+              ><output id="counter" aria-label="Количество шагов" aria-live="polite"
+                >0</output
+              ><button
+                type="button"
+                id="increment"
+                class="counter-button"
+                aria-label="Увеличить на один"
+                disabled
+              >
+                +
+              </button>
+            </div>
+            <progress
+              id="counter-progress"
+              max="10"
+              value="0"
+              aria-label="Прогресс до десяти шагов"
+            ></progress>
+            <div class="counter-bottom">
+              <span id="counter-message">Начнём с первого шага</span
+              ><button type="button" id="reset" disabled>
+                Сбросить <span aria-hidden="true">↺</span>
+              </button>
+            </div>
+            <noscript
+              ><p class="noscript-message">
+                Для работы счётчика включите JavaScript в браузере.
+              </p></noscript
+            >
+          </div>
+        </section>
+
+        <section class="features" aria-label="Из чего состоит проект">
+          <article>
+            <span class="feature-number">01</span>
+            <h3>Быстрый старт</h3>
+            <p>Dev-сервер и мгновенный отклик на изменения в исходниках.</p>
+            <code>npm run dev</code>
+          </article>
+          <article>
+            <span class="feature-number">02</span>
+            <h3>Порядок в коде</h3>
+            <p>ESLint проверяет код, Prettier поддерживает единый стиль.</p>
+            <code>npm run check</code>
+          </article>
+          <article>
+            <span class="feature-number">03</span>
+            <h3>Готовый результат</h3>
+            <p>Оптимизированные файлы в dist/ и локальный просмотр сборки.</p>
+            <code>npm run build</code>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <span class="footer-brand">build lab<span>.</span></span>
+        <p>Просто устроено. Аккуратно собрано.</p>
+        <span class="footer-tech">HTML / CSS / JS</span>
+      </footer>
+    </div>
+  </body>
+</html>
